@@ -38,7 +38,7 @@ class LinearRegression(object):
         
     def Regression(self):
         self.calculate_coefficient()
-        print("Equation of line : {} + {}*x".format(self.b_0,self.b_1))
+        print("Equation of line : Y = {} + {}*X".format(self.b_0,self.b_1))
         
     def plot_line(self):
         plt.scatter(self.X, self.Y, color = "m", marker = "o", s = 30) 
@@ -54,7 +54,7 @@ class LinearRegression(object):
         plt.ylabel('y') 
 
         # function to show plot 
-        plt.show() 
+        plt.show()
     
 if __name__=='__main__':
     regressor=LinearRegression('data/sample.csv')

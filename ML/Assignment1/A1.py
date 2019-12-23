@@ -54,7 +54,7 @@ class LinearRegression(object):
         plt.ylabel('y') 
 
         # function to show plot 
-        plt.show() 
+        plt.show()
     
 if __name__=='__main__':
     regressor=LinearRegression('data/sample.csv')
