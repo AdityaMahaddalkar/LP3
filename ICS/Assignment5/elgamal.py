@@ -3,6 +3,14 @@ from math import pow
 
 a = random.randint(2, 10)
 
+def computeGCD(x, y): 
+
+	# Iterative version of GCD
+	while(y): 
+		x, y = y, x % y 
+  
+	return x 
+
 def gcd(a, b):
 	if a < b:
 		return gcd(b, a)
@@ -13,9 +21,9 @@ def gcd(a, b):
 		
 def gen_key(q):
 	
-	key = random.randint(pow(10, 20), q)
-	while gcd(q, key) != 1:
-		key = random.randint(pow(10, 20), q)
+	key = random.randint(10**1000, q)
+	while computeGCD(q, key) != 1:
+		key = random.randint(10**1000, q)
 		
 	return key
 	
@@ -27,7 +35,8 @@ def power(a, b, c):
 		if b%2 == 0:
 			x = (x * y) % c
 		y = (y * y) % c
-		b = int(b / 2)
+		b = b >> 2
+		
 	return x % c
 	
 def encrypt(msg, q, h, g):
@@ -63,7 +72,7 @@ def main():
 	msg = 'encryption'
 	print("Original Message: ", msg)
 	
-	q = random.randint(pow(10, 20), pow(10, 50))
+	q = random.randint(10**1000, 10**1500)
 	g = random.randint(2, q)
 	
 	key = gen_key(q)
