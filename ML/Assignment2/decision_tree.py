@@ -124,19 +124,22 @@ def predict(query,tree,default = 1):
             else:
                 return result
 
-# Drop the ID column
-training_data = dataset.drop('ID', axis=1)
-#testing_data = train_test_split(dataset)[1] 
-
+# Drop the ID column as it is not contributing in the tree building
+                
+training_data = dataset.drop('ID', axis=1) 
 
 """
-Train the tree, Print the tree and predict the accuracy
+Train the tree and Print the tree
 """
 tree = ID3(training_data,training_data,training_data.columns[:-1])
 pprint(tree)
 
 
-# TODO: Query Testing
+#: Query Testing
 query = {'Age': '>35','Income': 'Medium','Gender': 'Male','Marital Status': 'Single'}
-
-print(predict(query, tree))
+print('-'*80)
+print('-'*34, 'Prediction','-'*34)
+print(f'Given : ')
+print(query)
+print(f'Answer for Buy\'s dependent variable: {predict(query, tree)}')
+print('-'*80)
