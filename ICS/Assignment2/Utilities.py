@@ -131,8 +131,28 @@ def int_to_binary(num):
     return "".join(ans)
 #int_to_binary(3)
 
+#7 Convert stream to 16 bit blocks
+def convert_sentence_to_16_bit_stream(sentence):
+    stream = []
+    for letter in sentence:
+        ascii_val = ord(letter)
+        bin_val = bin(ascii_val)[2:]
+        bin_val = '0'*(16-len(list(bin_val))) + bin_val
+        stream.append(bin_val)
+    #print(stream)
+    return stream
 
-#7 Generate keys for each round
+#8 convert 16 bit block to sentence
+def convert_16_bit_stream_to_sentence(stream):
+    ascii_list = []
+    for binary in stream:
+        #print(binary)
+        
+        ascii_list.append(chr(int(binary,2)))
+    #print(ascii_list)
+    return ''.join(ascii_list)
+
+#9 Generate keys for each round
 
 '''
 2 rounds are simulated 

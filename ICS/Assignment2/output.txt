@@ -1,0 +1,293 @@
+1
+
+
+w0 : 0100 1010 
+w1 : 1111 0101 
+w2 : 1101 1101 
+w3 : 0010 1000 
+w4 : 1000 0111 
+w5 : 1010 1111 
+-------------------- Keys --------------------
+Key 0 (w0+w1) : 0100 1010 1111 0101 
+Key 1 (w2+w3) : 1101 1101 0010 1000 
+Key 2 (w4+w5) : 1000 0111 1010 1111 
+
+********************Encryption phase********************
+
+	-------------------- Round 0 --------------------
+	Step 1(Add Round Key) : 1001 1101 1101 1101 
+	After Round 0 : 1001 1101 1101 1101 
+	-------------------- Round 1 --------------------
+	Step 1(Substitute Nibbles) : 0010 1110 1110 1110 
+	Step 2(Shift Row) : 0010 1110 1110 1110 
+	Step 3(Mix Columns) : 1111 0110 0011 0011 
+	Step 4(Add Round Key) : 0010 1011 0001 1011 
+	After Round 1 : 0010 1011 0001 1011 
+	-------------------- Round 2 --------------------
+	Step 1(Substitute Nibbles) : 1010 0011 0100 0011 
+	Step 2(Shift Row) : 1010 0011 0100 0011 
+	Step 3(Add Round Key) : 0010 0100 1110 1100 
+	After Round 2 : 0010 0100 1110 1100 
+
+Ciphertext : 0010 0100 1110 1100 
+
+***************End of Encryption phase***************
+
+********************Decryption phase********************
+
+	----------Reversing Round 2 ----------
+	Step 1(Add Round Key) : 1010 0011 0100 0011 
+	Step 2(Shift Row) : 1010 0011 0100 0011 
+	Step 3(Substitute Nibbles) : 0010 1011 0001 1011 
+	After Round 2 : 0010 1011 0001 1011 
+	----------Reversing Round 1 ----------
+	Step 1(Add Round Key) : 1111 0110 0011 0011 
+	Step 2(Mix Columns) : 0010 1110 1110 1110 
+	Step 3(Shift Row) : 0010 1110 1110 1110 
+	Step 4(Substitute Nibbles) : 1001 1101 1101 1101 
+	After Round 1 : 1001 1101 1101 1101 
+	----------Reversing Round 0 ----------
+	Step 1(Add Round Key) : 1101 0111 0010 1000 
+	After Round 0 : 1101 0111 0010 1000 
+
+Decryption Successful!!!!
+Original text : 1101 0111 0010 1000 
+Decrypted text : 1101 0111 0010 1000 
+
+***************End of Decryption phase***************
+
+
+
+2
+
+w0 : 0100 1010 
+w1 : 1111 0101 
+w2 : 1101 1101 
+w3 : 0010 1000 
+w4 : 1000 0111 
+w5 : 1010 1111 
+-------------------- Keys --------------------
+Key 0 (w0+w1) : 0100 1010 1111 0101 
+Key 1 (w2+w3) : 1101 1101 0010 1000 
+Key 2 (w4+w5) : 1000 0111 1010 1111 
+
+********************Encryption phase********************
+
+	-------------------- Round 0 --------------------
+	Step 1(Add Round Key) : 1000 1101 1101 1101 
+	After Round 0 : 1000 1101 1101 1101 
+	-------------------- Round 1 --------------------
+	Step 1(Substitute Nibbles) : 0110 1110 1110 1110 
+	Step 2(Shift Row) : 0110 1110 1110 1110 
+	Step 3(Mix Columns) : 1011 0101 0011 0011 
+	Step 4(Add Round Key) : 0110 1000 0001 1011 
+	After Round 1 : 0110 1000 0001 1011 
+	-------------------- Round 2 --------------------
+	Step 1(Substitute Nibbles) : 1000 0110 0100 0011 
+	Step 2(Shift Row) : 1000 0011 0100 0110 
+	Step 3(Add Round Key) : 0000 0100 1110 1001 
+	After Round 2 : 0000 0100 1110 1001 
+
+Ciphertext : 0000 0100 1110 1001 
+
+***************End of Encryption phase***************
+
+********************Decryption phase********************
+
+	----------Reversing Round 2 ----------
+	Step 1(Add Round Key) : 1000 0011 0100 0110 
+	Step 2(Shift Row) : 1000 0110 0100 0011 
+	Step 3(Substitute Nibbles) : 0110 1000 0001 1011 
+	After Round 2 : 0110 1000 0001 1011 
+	----------Reversing Round 1 ----------
+	Step 1(Add Round Key) : 1011 0101 0011 0011 
+	Step 2(Mix Columns) : 0110 1110 1110 1110 
+	Step 3(Shift Row) : 0110 1110 1110 1110 
+	Step 4(Substitute Nibbles) : 1000 1101 1101 1101 
+	After Round 1 : 1000 1101 1101 1101 
+	----------Reversing Round 0 ----------
+	Step 1(Add Round Key) : 1100 0111 0010 1000 
+	After Round 0 : 1100 0111 0010 1000 
+
+Decryption Successful!!!!
+Original text : 1100 0111 0010 1000 
+Decrypted text : 1100 0111 0010 1000 
+
+***************End of Decryption phase***************
+
+
+3
+
+w0 : 0100 1010 
+w1 : 1001 0101 
+w2 : 1101 1000 
+w3 : 0100 1101 
+w4 : 0000 0101 
+w5 : 0100 1000 
+-------------------- Keys --------------------
+Key 0 (w0+w1) : 0100 1010 1001 0101 
+Key 1 (w2+w3) : 1101 1000 0100 1101 
+Key 2 (w4+w5) : 0000 0101 0100 1000 
+
+********************Encryption phase********************
+
+	-------------------- Round 0 --------------------
+	Step 1(Add Round Key) : 1000 1101 1011 1101 
+	After Round 0 : 1000 1101 1011 1101 
+	-------------------- Round 1 --------------------
+	Step 1(Substitute Nibbles) : 0110 1110 0011 1110 
+	Step 2(Shift Row) : 0110 1110 0011 1110 
+	Step 3(Mix Columns) : 1010 1000 0011 0011 
+	Step 4(Add Round Key) : 0111 0000 0111 1110 
+	After Round 1 : 0111 0000 0111 1110 
+	-------------------- Round 2 --------------------
+	Step 1(Substitute Nibbles) : 0101 1001 0101 1111 
+	Step 2(Shift Row) : 0101 1111 0101 1001 
+	Step 3(Add Round Key) : 0101 1010 0001 0001 
+	After Round 2 : 0101 1010 0001 0001 
+
+Ciphertext : 0101 1010 0001 0001 
+
+***************End of Encryption phase***************
+
+********************Decryption phase********************
+
+	----------Reversing Round 2 ----------
+	Step 1(Add Round Key) : 0101 1111 0101 1001 
+	Step 2(Shift Row) : 0101 1001 0101 1111 
+	Step 3(Substitute Nibbles) : 0111 0000 0111 1110 
+	After Round 2 : 0111 0000 0111 1110 
+	----------Reversing Round 1 ----------
+	Step 1(Add Round Key) : 1010 1000 0011 0011 
+	Step 2(Mix Columns) : 0110 1110 0011 1110 
+	Step 3(Shift Row) : 0110 1110 0011 1110 
+	Step 4(Substitute Nibbles) : 1000 1101 1011 1101 
+	After Round 1 : 1000 1101 1011 1101 
+	----------Reversing Round 0 ----------
+	Step 1(Add Round Key) : 1100 0111 0010 1000 
+	After Round 0 : 1100 0111 0010 1000 
+
+Decryption Successful!!!!
+Original text : 1100 0111 0010 1000 
+Decrypted text : 1100 0111 0010 1000 
+
+***************End of Decryption phase***************
+
+
+4
+
+
+w0 : 0000 0000 
+w1 : 0000 0000 
+w2 : 0001 1001 
+w3 : 0001 1001 
+w4 : 0000 1101 
+w5 : 0001 0100 
+-------------------- Keys --------------------
+Key 0 (w0+w1) : 0000 0000 0000 0000 
+Key 1 (w2+w3) : 0001 1001 0001 1001 
+Key 2 (w4+w5) : 0000 1101 0001 0100 
+
+********************Encryption phase********************
+
+	-------------------- Round 0 --------------------
+	Step 1(Add Round Key) : 1100 0111 0010 1000 
+	After Round 0 : 1100 0111 0010 1000 
+	-------------------- Round 1 --------------------
+	Step 1(Substitute Nibbles) : 1100 0101 1010 0110 
+	Step 2(Shift Row) : 1100 0110 1010 0101 
+	Step 3(Mix Columns) : 0010 1111 0001 1110 
+	Step 4(Add Round Key) : 0011 0110 0000 0111 
+	After Round 1 : 0011 0110 0000 0111 
+	-------------------- Round 2 --------------------
+	Step 1(Substitute Nibbles) : 1011 1000 1001 0101 
+	Step 2(Shift Row) : 1011 0101 1001 1000 
+	Step 3(Add Round Key) : 1011 1000 1000 1100 
+	After Round 2 : 1011 1000 1000 1100 
+
+Ciphertext : 1011 1000 1000 1100 
+
+***************End of Encryption phase***************
+
+********************Decryption phase********************
+
+	----------Reversing Round 2 ----------
+	Step 1(Add Round Key) : 1011 0101 1001 1000 
+	Step 2(Shift Row) : 1011 1000 1001 0101 
+	Step 3(Substitute Nibbles) : 0011 0110 0000 0111 
+	After Round 2 : 0011 0110 0000 0111 
+	----------Reversing Round 1 ----------
+	Step 1(Add Round Key) : 0010 1111 0001 1110 
+	Step 2(Mix Columns) : 1100 0110 1010 0101 
+	Step 3(Shift Row) : 1100 0101 1010 0110 
+	Step 4(Substitute Nibbles) : 1100 0111 0010 1000 
+	After Round 1 : 1100 0111 0010 1000 
+	----------Reversing Round 0 ----------
+	Step 1(Add Round Key) : 1100 0111 0010 1000 
+	After Round 0 : 1100 0111 0010 1000 
+
+Decryption Successful!!!!
+Original text : 1100 0111 0010 1000 
+Decrypted text : 1100 0111 0010 1000 
+
+***************End of Decryption phase***************
+
+
+
+5
+
+w0 : 1100 0111 
+w1 : 0010 1000 
+w2 : 0010 1101 
+w3 : 0000 0101 
+w4 : 0000 0100 
+w5 : 0000 0001 
+-------------------- Keys --------------------
+Key 0 (w0+w1) : 1100 0111 0010 1000 
+Key 1 (w2+w3) : 0010 1101 0000 0101 
+Key 2 (w4+w5) : 0000 0100 0000 0001 
+
+********************Encryption phase********************
+
+	-------------------- Round 0 --------------------
+	Step 1(Add Round Key) : 1100 0111 0010 1000 
+	After Round 0 : 1100 0111 0010 1000 
+	-------------------- Round 1 --------------------
+	Step 1(Substitute Nibbles) : 1100 0101 1010 0110 
+	Step 2(Shift Row) : 1100 0110 1010 0101 
+	Step 3(Mix Columns) : 0010 1111 0001 1110 
+	Step 4(Add Round Key) : 0000 0010 0001 1011 
+	After Round 1 : 0000 0010 0001 1011 
+	-------------------- Round 2 --------------------
+	Step 1(Substitute Nibbles) : 1001 1010 0100 0011 
+	Step 2(Shift Row) : 1001 0011 0100 1010 
+	Step 3(Add Round Key) : 1001 0111 0100 1011 
+	After Round 2 : 1001 0111 0100 1011 
+
+Ciphertext : 1001 0111 0100 1011 
+
+***************End of Encryption phase***************
+
+********************Decryption phase********************
+
+	----------Reversing Round 2 ----------
+	Step 1(Add Round Key) : 1001 0011 0100 1010 
+	Step 2(Shift Row) : 1001 1010 0100 0011 
+	Step 3(Substitute Nibbles) : 0000 0010 0001 1011 
+	After Round 2 : 0000 0010 0001 1011 
+	----------Reversing Round 1 ----------
+	Step 1(Add Round Key) : 0010 1111 0001 1110 
+	Step 2(Mix Columns) : 1100 0110 1010 0101 
+	Step 3(Shift Row) : 1100 0101 1010 0110 
+	Step 4(Substitute Nibbles) : 1100 0111 0010 1000 
+	After Round 1 : 1100 0111 0010 1000 
+	----------Reversing Round 0 ----------
+	Step 1(Add Round Key) : 0000 0000 0000 0000 
+	After Round 0 : 0000 0000 0000 0000 
+
+Decryption Successful!!!!
+Original text : 0000 0000 0000 0000 
+Decrypted text : 0000 0000 0000 0000 
+
+***************End of Decryption phase***************
+

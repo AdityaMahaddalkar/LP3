@@ -42,18 +42,18 @@ class Decrypt:
         rnd=2
         while rnd >=0:
             step=1
-            print('\t'+'-'*10+'Reversing Round '+str(rnd)+' '+'-'*10)
+            #print('\t'+'-'*10+'Reversing Round '+str(rnd)+' '+'-'*10)
             
             #Step 1 : Add Round  Key (All rounds)
             self.ciphertext=String_Xor(self.ciphertext,self.keys[rnd])
-            print('\t'+"Step {}(Add Round Key) : {}".format(step,print_fun(self.ciphertext)))
+            #print('\t'+"Step {}(Add Round Key) : {}".format(step,print_fun(self.ciphertext)))
             
             step+=1
             
             #Step 2 : Inverse Mix column (Round 1 only)
             if rnd==1:
                 self.ciphertext=self.inverse_mix_columns(self.ciphertext)
-                print('\t'+"Step {}(Mix Columns) : {}".format(step,print_fun(self.ciphertext)))
+                #print('\t'+"Step {}(Mix Columns) : {}".format(step,print_fun(self.ciphertext)))
                 step+=1
             
 
@@ -62,18 +62,18 @@ class Decrypt:
 
             if rnd==1 or rnd==2:
                 self.ciphertext=self.ciphertext[:4]+self.ciphertext[12:]+self.ciphertext[8:12]+self.ciphertext[4:8]
-                print('\t'+"Step {}(Shift Row) : {}".format(step,print_fun(self.ciphertext)))
+                #print('\t'+"Step {}(Shift Row) : {}".format(step,print_fun(self.ciphertext)))
                 step+=1
 
             
             #Step 4 : Substitute nibbles (Round 1 and 2)
             if rnd==1 or rnd==2:
                 self.ciphertext=SubNib(Inverse_S_box,self.ciphertext[:8])+SubNib(Inverse_S_box,self.ciphertext[8:])
-                print('\t'+"Step {}(Substitute Nibbles) : {}".format(step,print_fun(self.ciphertext)))
+                #print('\t'+"Step {}(Substitute Nibbles) : {}".format(step,print_fun(self.ciphertext)))
                 step+=1
 
             
-            print('\tAfter Round '+str(rnd)+' : '+print_fun(self.ciphertext))
+            #print('\tAfter Round '+str(rnd)+' : '+print_fun(self.ciphertext))
             
             rnd-=1
             
