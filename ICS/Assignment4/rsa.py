@@ -44,9 +44,7 @@ def multiplicative_inverse(a, m) :
         x = x + m0 
   
     return x 
-'''
-Tests to see if a number is prime.
-'''
+
 def is_prime(num):
     if num == 2:
         return True
